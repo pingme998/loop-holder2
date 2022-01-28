@@ -28,4 +28,5 @@ ENV HOME=/root \
     RUN_FLUXBOX=yes
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
+RUN chmod +x /app/entrypoint.sh
 CMD ["/app/entrypoint.sh"]
