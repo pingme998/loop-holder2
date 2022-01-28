@@ -1,1 +1,3 @@
-n
+[program:brav]
+command=brave-browser-stable --no-sandbox  --disable-features=RendererCodeIntegrity --disable-gpu
+autorestart=true
