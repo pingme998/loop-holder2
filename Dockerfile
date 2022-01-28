@@ -6,6 +6,7 @@ RUN set -ex; \
     apt-get install -y \
       bash \
       fluxbox \
+      unzip \
       git \
       net-tools \
       novnc \
