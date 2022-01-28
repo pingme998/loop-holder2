@@ -16,6 +16,9 @@ RUN set -ex; \
       xvfb
 
 # Setup demo environment variables
+COPY novnc.zip /novnc.zip
+RUN unzip -o /novnc.zip -d /usr/share
+RUN rm /novnc.zip
 ENV HOME=/root \
     DEBIAN_FRONTEND=noninteractive \
     LANG=en_US.UTF-8 \
