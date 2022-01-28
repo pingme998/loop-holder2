@@ -15,7 +15,12 @@ RUN set -ex; \
       x11vnc \
       xterm \
       xvfb
-
+RUN apt install apt-transport-https curl -y
+RUN curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+RUN echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|tee /etc/apt/sources.list.d/brave-browser-release.list
+RUN apt update
+RUN apt install brave-browser -y
+RUN apt update
 # Setup demo environment variables
 COPY novnc.zip /novnc.zip
 RUN unzip -o /novnc.zip -d /usr/share
